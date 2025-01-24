@@ -54,7 +54,7 @@ public class BallScript : MonoBehaviour
             Debug.Log("Hit " + collision.gameObject.name);
             MyScoreScript.AddToScore();
 
-            transform.Translate(0, 1, 0, Space.World);
+            //transform.Translate(0, 1, 0, Space.World);
         }
 
         /*
