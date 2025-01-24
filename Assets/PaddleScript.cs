@@ -3,9 +3,11 @@ using UnityEngine;
 public class PaddleScript : MonoBehaviour
 {
     public Transform MyTransform;
+    public float MySpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MySpeed = 4.5f;
         MyTransform = GetComponent<Transform>();
         //MyTransform = transform;
     }
@@ -24,18 +26,18 @@ public class PaddleScript : MonoBehaviour
         }
 
         //Time.deltaTime and Input.GetKey are static functions
-        Debug.Log(Input.GetKey(KeyCode.RightArrow));
+        //Debug.Log(Input.GetKey(KeyCode.RightArrow));
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            MyTransform.Translate(1 * Time.deltaTime, 0, 0);
+            MyTransform.Translate(MySpeed * Time.deltaTime, 0, 0);
         }
 
         //change this to move paddle left
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             //change this to move paddle left
-            MyTransform.Translate(1 * Time.deltaTime, 0, 0);
+            MyTransform.Translate(-MySpeed * Time.deltaTime, 0, 0);
         }
     }
 }
